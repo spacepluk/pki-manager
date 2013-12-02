@@ -1,0 +1,51 @@
+############
+# Basic vars
+############
+
+# Dirs
+export CFGDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DIR="$(dirname $CFGDIR)"
+export CADIR="ca"
+export CERTSDIR="certs"
+export CRLDIR="crl"
+export PRIVATEDIR="private"
+export DBDIR="db"
+export PUBDIR="public"
+
+# Extensions
+export CFGEXT=".cfg"
+export CRTEXT=".crt"
+export CSREXT=".csr"
+export CRLEXT=".crl"
+export KEYEXT=".key"
+export PUBEXT=".cer"
+export PEMEXT=".pem"
+export PKCS7EXT=".p7c"
+export DBEXT=".db"
+export ATTREXT="$DBEXT.attr"
+export SERIALEXT="$CRTEXT.srl"
+export CRLNUMBEREXT="$CRLEXT.srl"
+export CACHAINEXT="-ca-chain"
+export ROOTCAEXT="-root-ca"
+export INTERMEDIATEEXT="-intermediate-ca"
+
+# Files
+CLIENTCFG="$CFGDIR/tls-client.cfg"
+OCSPCFG="$CFGDIR/ocsp.cfg"
+SERVERCFG="$CFGDIR/tls-server.cfg"
+TIMESTAMPCFG="$CFGDIR/timestamp.cfg"
+
+##################
+# Certificate vars
+##################
+
+# CA config vars
+export rootca_crl_days="30"    # How long before next CRL
+export ca_default_bits="4096"  # RSA key size
+export ca_default_md="sha256"  # MD to use
+export ca_default_days="7300"  # Lifetime
+
+# Cert config vars
+export cert_default_bits="2048" # RSA key size
+export cert_default_md="sha256" # MD to use
+export cert_default_days="730"  # Lifetime
